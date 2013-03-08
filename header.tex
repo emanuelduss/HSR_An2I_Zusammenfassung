@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% header.tex
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokument
+\documentclass[12pt,oneside,a4paper,parskip]{scrartcl}
+\usepackage[inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm,includeheadfoot]{geometry}
+
+\usepackage[sc]{mathpazo}    % Palatino Schriftart
+\renewcommand\sfdefault{ppl}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ngerman}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{ccicons}
+
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{makeidx}                  % Index
+\makeindex
+\usepackage{fancybox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jede Überschrift 1 auf neuer Seite
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Angaben zum Dokument
+\subject{\SUBJECT}
+\title{\TITLE}
+\author{\AUTHOR \\ \EMAIL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF-Metainformationen
+\hypersetup{
+  pdftitle    = {\TITLE},
+  pdfsubject  = {\SUBJECT},
+  pdfauthor   = {\AUTHOR, \EMAIL},
+  pdfkeywords = {\KEYWORDS} ,
+  pdfcreator  = {pdflatex},
+  pdfproducer = {LaTeX with hyperref}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf- und Fusszeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[L]{\nouppercase{\SUBJECT}}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[L]{\AUTHOR}
+\fancyfoot[R]{\thepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Code-Listing
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}  
+\usepackage{listings}
+\lstset{numbers=left,
+    numbersep=10pt,
+    xleftmargin=.25in,
+    xrightmargin=.25in ,
+    numberstyle=\tiny,
+    language=Java,                               % oder C++, Pascal, {[77]Fortran}, ...
+    basicstyle=\ttfamily,                        % Textgröße des Standardtexts
+    keywordstyle=\ttfamily\color{red},           % Formattierung Schlüsselwörter
+    commentstyle=\ttfamily\color{green},         % Formattierung Kommentar
+    stringstyle=\ttfamily\color{blue},           % Formattierung Strings
+    captionpos=b,                                % Position der Überschrift
+    xleftmargin=0pt,                             % Linke Einrückung
+    tabsize=2,
+    breaklines=true,                             % Umbruch langer Zeilen
+    backgroundcolor=\color{light-gray},
+    showstringspaces=false,                      % Spezielles Zeichen für Leerzeichen
+}
+
+% EOF

@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% titlepage.tex
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titelseite
+\begin{titlepage}
+  \thispagestyle{empty}
+  \maketitle
+  \vfill
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=300px]{hsr_logo.pdf}
+  \end{figure}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Infoseite
+\thispagestyle{empty}
+\SUBJECT \\
+\TITLE
+
+Dieses Dokument basiert auf der Vorlesung "`\TITLE"' der
+HSR (Hochschule für Technik Rapperswil) vom \SEMESTER.
+
+Version \REVISION~vom \REVISIONDATE.
+\vfill
+
+\uppercase{Mitmachen} \\
+Falls Du an diesem Dokument mitarbeiten willst, kannst Du das Dokument
+auf GitHub unter \url{\GITHUB} forken.
+
+\uppercase{Mitwirkende} \\
+Folgende Personen haben an diesem Dokument mitgewirkt: \\
+\input{contributors.tex}
+
+\uppercase{Lizenz} \\
+Copyright \copyright~\YEAR~by Emanuel Duss. \\
+Dieses Dokument steht unter einer Creative Commons Namensnennung -
+Weitergabe unter gleichen Bedingungen 3.0 Schweiz Lizenz (CC BY-SA). \\
+\url{http://creativecommons.org/licenses/by-sa/3.0/ch/}
+
+{\huge \ccbysa}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inhaltsverzeichnis
+\setcounter{page}{1}
+\tableofcontents
+
+% EOF

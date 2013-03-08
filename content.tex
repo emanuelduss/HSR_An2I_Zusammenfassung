@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Integralrechnung}
+\subsection{Bestimmtes Integral}
+Sei $f$ eine auf dem Intervall $[a;b]$ definierte Funktion.
+\[ \int^b_a f = \int^b _a f(x) dx =
+  \lim_{n \to \infty} \frac{b-a}{n} \sum_{k=1}^{n}f(x_k) \cdot \Delta x
+\]
+mit
+\[ f(x_k) = a + k\left(\frac{b-a}{n}\right) \text{ und }
+  x_k = a + i \cdot \Delta x\]
+existiert, dann heisst die Funktion auf dem Intervall $[a;b]$
+integrierbar.
+
+\subsection{Graphische Interpretation von Integralen}
+Beim Integral $\int_{a}^{b}f$ gibt es zwei Fälle:
+\begin{itemize}
+  \item Wenn $a < b$: Positive Ordinate zählt positiv;
+    Negative Ordinate zählt negativ
+  \item Wenn $a > b$: Positive Ordinate zählt negativ;
+    Negative Ordinate zählt positiv
+\end{itemize}
+
+\subsection{Rechnen mit Integralen}
+Vertauschen der Integralgrenzen ändert das Vorzeichen des Integrals:
+\[ \int_{a}^{b}f = - \int_{b}^{a}f \]
+Aneinanderstossende Integrale können zusammengefasst werden:
+\[ \int_{a}^{b}f + \int_{b}^{c}f = \int_{a}^{c}f \]
+Es gelten die Linearitätsgesetze
+\[ \int_{a}^{b}f+g = \int_{a}^{b}f + \int_{a}^{b}g \]
+und
+\[ \int_{a}^{b}c \cdot g = c \cdot \int_{a}^{b}f \]
+
+\subsection{Nummerische Berechnung von Integralen}
+\subsubsection{Rechteckregel}
+\[ \int^b_a f =  \Delta x \sum_{k=1}^{n}f(x_k) \]
+mit
+\[ \Delta x = \frac{b-a}{n} \text{ und } x_k = a + i \cdot \Delta x \]
+
+\subsubsection{Trapezregel}
+\subsubsection{Simpson-Regel (Fassregel)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Anhang}
+\subsection{Summenformeln}
+\[ \sum_{i=1}^{n}i = \frac{n(n+1)}{2} \]
+\[ \sum_{i=1}^{n}i^2 = \frac{n(n+1)(2n+1)}{6} \]
+\[ \sum_{i=1}^{n}i^3 = \left(\frac{n(n+1}{2}\right)^2 \]
