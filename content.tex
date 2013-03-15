@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Integralrechnung}
-\subsection{Bestimmtes Integral}
+\subsection{Grundlagen}
+\subsubsection{Bestimmtes Integral}
 Sei $f$ eine auf dem Intervall $[a;b]$ definierte Funktion.
 \[ \int^b_a f = \int^b _a f(x) dx =
   \lim_{n \to \infty} \frac{b-a}{n} \sum_{k=1}^{n}f(x_k) \cdot \Delta x
@@ -11,7 +12,7 @@ mit
 existiert, dann heisst die Funktion auf dem Intervall $[a;b]$
 integrierbar.
 
-\subsection{Graphische Interpretation von Integralen}
+\subsubsection{Graphische Interpretation von Integralen}
 Beim Integral $\int_{a}^{b}f$ gibt es zwei Fälle:
 \begin{itemize}
   \item Wenn $a < b$: Positive Ordinate zählt positiv;
@@ -20,25 +21,71 @@ Beim Integral $\int_{a}^{b}f$ gibt es zwei Fälle:
     Negative Ordinate zählt positiv
 \end{itemize}
 
-\subsection{Rechnen mit Integralen}
+\subsubsection{Grundregeln für Integrale}
+Faktorregel:
+\[ \int_{a}^{b}c \cdot g = c \cdot \int_{a}^{b}f \]
 Vertauschen der Integralgrenzen ändert das Vorzeichen des Integrals:
 \[ \int_{a}^{b}f = - \int_{b}^{a}f \]
 Aneinanderstossende Integrale können zusammengefasst werden:
 \[ \int_{a}^{b}f + \int_{b}^{c}f = \int_{a}^{c}f \]
-Es gelten die Linearitätsgesetze
+Linearität:
 \[ \int_{a}^{b}f+g = \int_{a}^{b}f + \int_{a}^{b}g \]
-und
-\[ \int_{a}^{b}c \cdot g = c \cdot \int_{a}^{b}f \]
+Gleiche Integrationsgrenzen
+\[ \int_{a}^{a} f = 0 \]
 
-\subsection{Nummerische Berechnung von Integralen}
-\subsubsection{Rechteckregel}
+\subsubsection{Nummerische Berechnung von Integralen}
+Rechteckregel:
 \[ \int^b_a f =  \Delta x \sum_{k=1}^{n}f(x_k) \]
 mit
 \[ \Delta x = \frac{b-a}{n} \text{ und } x_k = a + i \cdot \Delta x \]
 
-\subsubsection{Trapezregel}
-\subsubsection{Simpson-Regel (Fassregel)}
+\subsection{Berechnung von Integralen mit Stammfunktionen}
+\subsubsection{Integralfunktion}
+\[ \phi_a(x) = \int_a^x f \]
+\begin{itemize}
+  \item Die Integralfunktion hängt vom Parameter $a$ ab.
+  \item Ändert man den Parameter $a$, so ändert sich die
+  Integralfunktion nur um eine Konstante ($\phi_b(x) = \phi_a(x) + C$),
+  was eine Verschiebung auf der Y-Achse bewirkt.
+\end{itemize}
 
+Aus der Ableitung der Integralfunktion erhalten wir die ursprüngliche Funktion:
+\[ \frac{dx}{x} \phi_a(x) = \frac{dx}{x} \int_a^x f = f(x) \]
+
+\subsubsection{Stammfunktion}
+Wir nennen eine Funktion $F$ Stammfunktion von $f$, wenn die Ableitung
+der Stammfunktion $f$ ergibt:
+\[F \text{ mit } F' = f\]
+\subsubsection{Hauptsatz}
+Jede Integralfunktion ist eine Stammfunktion. Diese können wir zum
+Berechnen von Integralen benutzen.
+\[\phi_a(x) = \int_a^x f  = F(x) - F(a) = F(x)|^b_a\]
+% LaTeX TODO: Pipe grösser machen
+
+\subsubsection{Unbestimmtes Integral}
+Das unbestimmte Integral $\int f$ ist die Menge aller Stammfunktionen
+von $f$.
+\[ \int f(x) dx = F(x) + C \text{ bzw. } \int f = F + C\]
+
+\subsubsection{Rechenregeln}
+Verkettung linearer Funktionen
+\[ \int f(ax+b)dx = \frac{1}{a}F(ax+b) + c \]
+
+Spezialfall der Produkteregel
+\[ \int f(x) \cdot f'(x) dx = \frac{1}{2}f^2(x) + c \]
+
+Quotientenregel
+\[ \int \frac{f'(x)}{f(x)}dx = ln(|f(x)|) \]
+
+Substitutionsregel
+\[ \int f(g(x)) \cdot f'(x) dx = G(f(x)) + c\]
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Fouriertransformation}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Differenzialgleichungen}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Anhang}
