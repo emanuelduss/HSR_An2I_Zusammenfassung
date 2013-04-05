@@ -5,7 +5,7 @@
 #
 ########################################################################
 
-TARGET=document.pdf
+TARGET=An2I.pdf
 LL=latexmk -pdf
 CLEAN=latexmk -c
 
