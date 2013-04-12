@@ -82,7 +82,39 @@ Substitutionsregel
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Fouriertransformation}
+\section{Fouriertransformation}
+\subsection{Fourierreihen}
+Eine Fourierreihe der Funktion $f$ besteht aus einer Linearkombination
+von Sinus- und Kosinus-Funktionen, welche alle dieselbe Persiode $T$
+haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximiert.
+
+\subsubsection{Sinus-Kosinus-Form}
+\[
+  f(t) = a_0 + \sum_{k=1}^{n}
+  (a_k \cdot cos(k \omega t) + b_k \cdot sin(k \omega t))
+\]
+\begin{itemize}
+  \item Konstante $a_0 = A_0$
+  \item Koeffizient $a_k = A_k \cdot cos(\phi_k)$
+  \item Koeffizient $b_k = A_k \cdot sin(\phi_k)$
+\end{itemize}
+
+\subsubsection{Amplituden-Phasen-Form}
+\[
+  f(t) = A_0 + \sum_{k=1}^{n}
+  (A_k \cdot cos(k \omega t  - \phi_k))
+\]
+\begin{itemize}
+  \item Grundkreisfrequenz $\omega = \frac{2\pi}{T}$
+  \item Konstante $A_0 = a_0$
+  \item Koeffizient $A_k = \sqrt{a_k^2 + b_k^2}$
+  \item $\phi_k =  \begin{array}{ll}
+      arctan\left(\frac{b_k}{a_k}\right) & \text{ für } a_k > 0 \\
+      arctan\left(\frac{b_k}{a_k}\right) + \pi & \text{ für } a_k < 0 \\
+      \frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k > 0\\
+      -\frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k < 0\\
+    \end{array}$
+\end{itemize}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{Differenzialgleichungen}
