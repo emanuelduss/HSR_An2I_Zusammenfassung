@@ -94,9 +94,12 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   (a_k \cdot cos(k \omega t) + b_k \cdot sin(k \omega t))
 \]
 \begin{itemize}
-  \item Konstante $a_0 = A_0$
-  \item Koeffizient $a_k = A_k \cdot cos(\phi_k)$
-  \item Koeffizient $b_k = A_k \cdot sin(\phi_k)$
+  \item Grundkreisfrequenz $\omega = \frac{2\pi}{T}$
+  \item Konstante $a_0 = A_0 = \frac{1}{T}\int_0^T s(t) dt$
+  \item Koeffizient $a_k = A_k \cdot cos(\phi_k) =
+    \frac{2}{T} \int_0^T s(t) \cdot cos(k \omega t) dt$
+  \item Koeffizient $b_k = A_k \cdot sin(\phi_k) =
+    \frac{2}{T} \int_0^T s(t) \cdot sin(k \omega t) dt$
 \end{itemize}
 
 \subsubsection{Amplituden-Phasen-Form}
