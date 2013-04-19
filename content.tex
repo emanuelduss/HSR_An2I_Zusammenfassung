@@ -95,6 +95,7 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Konstante $a_0 = A_0 = \frac{1}{T}\int_0^T s(t) dt$
   \item Koeffizient $a_k = A_k \cdot cos(\phi_k) =
     \frac{2}{T} \int_0^T s(t) \cdot cos(k \omega t) dt$
+    oder $0$, falls $f(t)$ ungerade
   \item Koeffizient $b_k = A_k \cdot sin(\phi_k) =
     \frac{2}{T} \int_0^T s(t) \cdot sin(k \omega t) dt$
 \end{itemize}
@@ -108,12 +109,12 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Grundkreisfrequenz (Gemeinsame Periode) $\omega = \frac{2\pi}{T}$
   \item Konstante $A_0 = a_0$
   \item Koeffizient $A_k = \sqrt{a_k^2 + b_k^2}$
-  \item $\phi_k =  \begin{array}{ll}
+  \item $\phi_k =  \begin{cases}
       arctan\left(\frac{b_k}{a_k}\right) & \text{ für } a_k > 0 \\
       arctan\left(\frac{b_k}{a_k}\right) + \pi & \text{ für } a_k < 0 \\
       \frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k > 0\\
       -\frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k < 0\\
-    \end{array}$
+    \end{cases}$
 \end{itemize}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
