@@ -95,10 +95,8 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Konstante $a_0 = A_0 = \frac{1}{T}\int_0^T s(t) dt$
   \item Koeffizient $a_k = A_k \cdot cos(\phi_k) =
     \frac{2}{T} \int_0^T s(t) \cdot cos(k \omega t) dt$
-    oder $0$, falls $f(t)$ ungerade
   \item Koeffizient $b_k = A_k \cdot sin(\phi_k) =
     \frac{2}{T} \int_0^T s(t) \cdot sin(k \omega t) dt$
-    oder $0$, falls $f(t)$ gerade
 \end{itemize}
 
 \subsubsection{Amplituden-Phasen-Form}
@@ -116,6 +114,37 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
       \frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k > 0\\
       -\frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k < 0\\
     \end{cases}$
+\end{itemize}
+
+\subsection{Eigenschaften}
+\subsubsection{Gerade und ungerade Funktionen}
+\paragraph{Gerade Funktionen}
+\begin{itemize}
+  \item Für die geraden Funktionen ist das Integral
+    $\int_0^{\frac{T}{2}}$ am optimalsten.
+  \item Koeffizient $b_k = 0$
+\end{itemize}
+\paragraph{Ungerade Funktionen}
+\begin{itemize}
+  \item Für die ungeraden Funktionen ist das Integral
+    $\int_{-\frac{T}{2}}^{\frac{T}{2}}$ am optimalsten.
+  \item Koeffizient $a_k = 0$
+\end{itemize}
+
+\subsubsection{Transformation von Fourierreihen}
+\paragraph{Spiegeln an X-Achse}
+\begin{itemize}
+  \item Sinus-Kosinus-Form: $r(t) = -s(t) = -a_0 + \sum_{k=1}^{n} ( -a_k \cdot
+    cos(k \omega t) + (-b_k) \cdot sin(k \omega t))$
+  \item Amplituden-Phasen-Form: $r(t) = -s(t) = -A_0 + \sum_{k=1}^{n} (A_k \cdot cos(k
+  \omega t  - (\phi_k + \pi)))$
+\end{itemize}
+\paragraph{Spiegeln an Y-Achse}
+\begin{itemize}
+  \item Sinus-Kosinus-Form: $r(t) = s(-t) = a_0 + \sum_{k=1}^{n} ( a_k \cdot
+    cos(k \omega t) + (-b_k) \cdot sin(k \omega t))$
+  \item Amplituden-Phasen-Form: $r(t) = s(-t) =  A_0 + \sum_{k=1}^{n} (A_k \cdot cos(k
+  \omega t  - (-\phi_k)))$
 \end{itemize}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
