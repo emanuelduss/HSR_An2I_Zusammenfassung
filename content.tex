@@ -87,24 +87,24 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \subsubsection{Sinus-Kosinus-Form}
 \[
   f(t) = a_0 + \sum_{k=1}^{n}
-  (a_k \cdot cos(k \omega t) + b_k \cdot sin(k \omega t))
+  (a_k \cdot cos(k \omega_1 t) + b_k \cdot sin(k \omega_1 t))
 \]
 \begin{itemize}
-  \item Grundkreisfrequenz (Gemeinsame Periode) $\omega = \frac{2\pi}{T}$
+  \item Grundkreisfrequenz (Gemeinsame Periode) $\omega_1 = \frac{2\pi}{T}$
   \item Konstante $a_0 = A_0 = \frac{1}{T}\int_0^T s(t) dt$
   \item Koeffizient $a_k = A_k \cdot cos(\phi_k) =
-    \frac{2}{T} \int_0^T s(t) \cdot cos(k \omega t) dt$
+    \frac{2}{T} \int_0^T s(t) \cdot cos(k \omega_1 t) dt$
   \item Koeffizient $b_k = A_k \cdot sin(\phi_k) =
-    \frac{2}{T} \int_0^T s(t) \cdot sin(k \omega t) dt$
+    \frac{2}{T} \int_0^T s(t) \cdot sin(k \omega_1 t) dt$
 \end{itemize}
 
 \subsubsection{Amplituden-Phasen-Form}
 \[
   f(t) = A_0 + \sum_{k=1}^{n}
-  (A_k \cdot cos(k \omega t  - \phi_k))
+  (A_k \cdot cos(k \omega_1 t  - \phi_k))
 \]
 \begin{itemize}
-  \item Grundkreisfrequenz (Gemeinsame Periode) $\omega = \frac{2\pi}{T}$
+  \item Grundkreisfrequenz (Gemeinsame Periode) $\omega_1 = \frac{2\pi}{T}$
   \item Konstante $A_0 = a_0$
   \item Koeffizient $A_k = \sqrt{a_k^2 + b_k^2}$
   \item $\phi_k =  \begin{cases}
@@ -134,16 +134,16 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \paragraph{Spiegeln an X-Achse}
 \begin{itemize}
   \item Sinus-Kosinus-Form: $r(t) = -s(t) = -a_0 + \sum_{k=1}^{n} ( -a_k \cdot
-    cos(k \omega t) + (-b_k) \cdot sin(k \omega t))$
+    cos(k \omega_1 t) + (-b_k) \cdot sin(k \omega_1 t))$
   \item Amplituden-Phasen-Form: $r(t) = -s(t) = -A_0 + \sum_{k=1}^{n} (A_k \cdot cos(k
-  \omega t  - (\phi_k + \pi)))$
+  \omega_1 t  - (\phi_k + \pi)))$
 \end{itemize}
 \paragraph{Spiegeln an Y-Achse}
 \begin{itemize}
   \item Sinus-Kosinus-Form: $r(t) = s(-t) = a_0 + \sum_{k=1}^{n} ( a_k \cdot
-    cos(k \omega t) + (-b_k) \cdot sin(k \omega t))$
-  \item Amplituden-Phasen-Form: $r(t) = s(-t) =  A_0 + \sum_{k=1}^{n} (A_k \cdot cos(k
-  \omega t  - (-\phi_k)))$
+    cos(k \omega_1 t) + (-b_k) \cdot sin(k \omega_1 t))$
+  \item Amplituden-Phasen-Form: $r(t) = s(-t) =  A_0 + \sum_{k=1}^{n}
+    (A_k \cdot cos(k \omega_1 t  - (-\phi_k)))$
 \end{itemize}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,7 +153,7 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \section{Anhang}
 \subsection{Summenformeln}
 \[ \begin{aligned}
- \sum_{i=1}^{n}i     & = \frac{n(n+1)}{2} \\
- \sum_{i=1}^{n}i^2   & = \frac{n(n+1)(2n+1)}{6} \\
- \sum_{i=1}^{n}i^3   & = \left(\frac{n(n+1}{2}\right)^2 \\
+  \sum_{i=1}^{n}i     & = \frac{n(n+1)}{2} \\
+  \sum_{i=1}^{n}i^2   & = \frac{n(n+1)(2n+1)}{6} \\
+  \sum_{i=1}^{n}i^3   & = \left(\frac{n(n+1}{2}\right)^2 \\
 \end{aligned} \]
