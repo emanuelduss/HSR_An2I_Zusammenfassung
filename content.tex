@@ -149,7 +149,8 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \end{itemize}
 \paragraph{Skalierung auf der X-Achse (Zeitskalierung)}
 \begin{itemize}
-  \item Transformation: $r(t) = s(c \cdot t)$
+  \item Transformation: $r(t) = s(c \cdot t)$ für $c > 0$
+  \item Für $c < 0$: Zusätzliche Transformation: $r(t) = s(-t)$
   \item Periodendauer $\hat{T} = \frac{1}{c}T$
   \item Sinus-Kosinus-Form: $a_0 + \sum_{k=1}^{n}
     a_k \cdot cos(k \boldsymbol{(c \omega_1)} t) +
@@ -157,30 +158,41 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Amplituden-Phasen-Form: $A_0 + \sum_{k=1}^{n}
     (A_k \cdot cos(k \boldsymbol{(c \omega_1)} t  - \phi_k))$
 \end{itemize}
+\paragraph{Skalierung auf der Y-Achse (Vertikalskalierung)}
+\begin{itemize}
+  \item Transformation: $r(t) = c \cdot s(t)$
+  \item Sinus-Kosinus-Form: $\boldsymbol{(c \cdot a_0)} + \sum_{k=1}^{n}
+  ( \boldsymbol{(c \cdot a_k)} \cdot cos(k \omega_1 t) + \boldsymbol{(c
+  \cdot b_k)} \cdot sin(k \omega_1 t))$
+  \item Amplituden-Phasen-Form: $\boldsymbol{(c \cdot A_0)} + \sum_{k=1}^{n}
+    (\boldsymbol{(c \cdot A_k)} \cdot cos(k \omega_1 t  - \phi_k))$
+\end{itemize}
 \paragraph{Verschieben auf der X-Achse (Zeitverschiebung)}
 \begin{itemize}
-  \item $\hat{s} = s(t-c)$;
-    Verschiebung nach rechts ($c > 0$) oder nach links ($c < 0$)
-  \item Grundkreisfrequenz bleibt unverändert: $\hat{\omega} = \omega$
-  \item Konstante bleibt unverändert: $\hat{a_0} = a_0$
-  % \item $\gamma = 2\pi\frac{c}{T}$
-  % \item $\hat{a_k} = a_k \cdot cos(k\gamma) - b_k \cdot sin(k\gamma)$
-  % \item $\hat{b_k} = a_k \cdot sin(k\gamma) - b_k \cdot cos(k\gamma)$
-  % neu
-  \item $\hat{b_k} = a_k \cdot sin(k\omega_1c)
-    + b_k \cdot cos(k\omega_1c)$
-  \item $\hat{b_k} = a_k \cdot cos(k\omega_1c)
-    - b_k \cdot sin(k\omega_1c)$
-  \item Sinus-Kosinus-Form: $r(t) = s(t-c) = a_0 + \sum_{k=1}^{n}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TBD
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  ( -a_k \cdot cos(k \omega_1 t) + (-b_k)
-  \cdot sin(k \omega_1 t))$
-  \item Amplituden-Phasen-Form: $r(t) = -s(t) = -A_0 + \sum_{k=1}^{n} (A_k \cdot cos(k
-  \omega_1 t  - (\phi_k + \pi)))$
+  \item $r(t) = s(t-c)$ für $c > 0$
+  \item Sinus-Kosinus-Form mittels Additionstheoremen berechnen
+    \begin{itemize}
+      \item $a_0 + \sum_{k=1}^{n} (a_k \cdot cos(k \omega_1
+        \boldsymbol{(t-c)}) + b_k \cdot sin(k \omega_1 \boldsymbol{(t-c)}))$
+      \item $a_0 + \sum_{k=1}^{n}(
+        a_k \cdot cos(\boldsymbol{k \omega_1 t - k \omega_1 c}) +
+        b_k \cdot sin(\boldsymbol{k \omega_1 t - k \omega_1 c}))$
+      \item  $a_0 + \sum_{k=1}^{n}[
+        a_k (cos(k \omega_1 t) \cdot cos(k \omega_1 c) + sin(k \omega_1
+        t) \cdot sin(k \omega_1 c)) + \\
+        b_k (sin(k \omega_1 t) \cdot cos(k \omega_1 c) + sin(k \omega_1
+        t) \cdot cos(k \omega_1 c))$
+      \item $a_0 + \sum_{k=1}^{n} [
+        \boldsymbol{(a_k \cdot cos(k \omega_1 c) -
+        b_k \cdot sin(k \omega_1 c))} \cdot cos(k \omega_1 t) + \\
+        \boldsymbol{(a_k \cdot sin(k \omega_1 c) +
+        b_k \cdot cos(k \omega_1 c))} \cdot sin(k \omega_1 t)]$
+    \end{itemize}
+  \item Amplituden-Phasen-Form: $A_0 + \sum_{k=1}^{n}
+    (A_k \cdot cos(k \omega_1 t - \boldsymbol{(k \omega_1 c + \phi_k)}))$
+  % \item Sinus-Kosinus-Form: $f(t) = a_0 + \sum_{k=1}^{n} (a_k \cdot cos(k \omega_1 t) + b_k \cdot sin(k \omega_1 t))$
 \end{itemize}
-\paragraph{Verschieben auf der Y-Achse (Zeitverschiebung)}
+\paragraph{Verschieben auf der Y-Achse (Vertikalverschiebung)}
 \begin{itemize}
   \item Transformation: $r(t) = s(t) + c$
   \item Sinus-Kosinus-Form: $\boldsymbol{(a_0 + c)} + \sum_{k=1}^{n} ( a_k \cdot
@@ -188,7 +200,6 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Amplituden-Phasen-Form: $\boldsymbol{A_0} + \sum_{k=1}^{n}
     (A_k \cdot cos(k \omega_1 t  - \phi_k))$
 \end{itemize}
-
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
