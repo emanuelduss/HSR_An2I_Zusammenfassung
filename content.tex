@@ -55,6 +55,7 @@ Aus der Ableitung der Integralfunktion erhalten wir die ursprüngliche Funktion:
 Wir nennen eine Funktion $F$ Stammfunktion von $f$, wenn die Ableitung
 der Stammfunktion $f$ ergibt:
 \[F \text{ mit } F' = f\]
+
 \subsubsection{Hauptsatz}
 Jede Integralfunktion ist eine Stammfunktion. Diese können wir zum
 Berechnen von Integralen benutzen.
@@ -202,15 +203,191 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \end{itemize}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Differenzialgleichungen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Differenzialgleichungen}
+\subsection{Begirffe}
+\begin{itemize}
+  \item Anwendungsgebiet: Viele Naturgesetze können mit einer
+    Differenzialgleichung (DGL) modelliert werden.
+  \item Differenzialgleichung: Gleichung zwischen einer Funktion und
+    derer Ableitung
+  \item Ordnung: Höchste vorkommende Ableitung
+  \item Allgemeine Lösung: Lösungsmenge mit unendlich verschiedenen
+    Lösungen (eine Differenzialgleichung hat in der Regel unendlich viele Lösungen)
+  \item Spezielle Lösung: Einzelne Lösung aus der Lösungsmenge
+  \item Randbedingungen: Bedingungen um spezielle Lösung anzugeben.
+  \item Anfangswertproblem: Differenzialgleichung mit Randbedingungen
+\end{itemize}
+
+\subsubsection{Explizite Differenzialgleichung}
+Bei einer expliziten Differenzialgleichung ist die höchste Ableitung ist
+auf eine Seite isoliert:
+\[ \frac{df}{dx} = f'(x) = G(x, f(x)) \]
+
+\subsection{Näherungslösung mit dem Verfahren nach Euler}
+Gegeben ist eine Differenzialgleichung:
+\[ f'(x) = 2x - 3f(x) + 1 \]
+Mit dem \textcolor{red}{Anfangswertproblem}:
+\[ f(0) = 0 \]
+
+\begin{small}
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+    Stufe & x & Funktion &
+      Ableitung &
+      Linearisierung \\
+    \# & $x$ & $f(x)$ &
+      $f'(x) = 2x - 3f(x) + 1$ &
+      $f(\widetilde{x}) = f(x) + f'(x)(\widetilde{x}-x)$ \\
+  \hline \hline
+    0 & \textcolor{red}{$0$} & \textcolor{red}{$f(0) = 0$} &
+      $f'(x) = 2 \cdot 0 - 3 \cdot 0 + 1 = 1 $ &
+      $f(\widetilde{x}) = 0 + 1(\widetilde{x} - 0)$ \\
+  \hline
+    1 & 0.1 & $f(\widetilde{x}) = 0 + 1(0.1 -0) = 0.1$ &
+      $2 \cdot 0.1 - 3 \cdot 0.1 + 1 = 0.9$ &
+      $0.1 + 0.9(\widetilde{x} - 0.1)$ \\
+  \hline
+    2 & 0.2 & $0.1 + 0.9(0.2 - 0.1) = 0.19$ &
+      $2 \cdot 0.2 - 3 \cdot 0.19 + 1 = 0.83$ &
+      $0.19 + 0.83(\widetilde{x} - 0.2)$ \\
+  \hline
+    3 & 0.3 & $0.19 + 0.83(0.3 - 0.2) = 0.273$ &
+      $\dots$ &
+      $\dots$ \\
+  \hline
+\end{tabular}
+\end{small}
+
+Somit ist $f(0.3) \approx 0.273$.
+
+\subsection{Separierbare Differenzialgleichung}
+Eine separierbare Differenzialgleichung kann auf folgende Form gebracht
+werden:
+\[ f'(x) = \frac{g(x)}{h(f(x))} \]
+Es handelt sich um eine explizite Differenzialgleichung erster Ordnung,
+wobei die Ableitung $f'(x)$ der gesuchten Funktion als Quotient dargestellt
+wird. Der Zähler ist abhängig von $x$, der Nenner von $f(x)$.
+
+Oder als Produkt:
+\[ f'(x) = g(x) \cdot h(f(x)) \]
+Ein Faktor ist nur von $x$, der andere nur von $f(x)$ abhängig.
+
+\subsubsection{Lösen von separierbaren Differenzialgleichungen}
+Schritt 0: Schreibweise: Die Differenzialgleichungen wird in die
+Termschreibweise gebracht.
+\[ \frac{df}{dx} = g(x) \cdot h(f) \]
+
+\paragraph{Schritt 1:} Separieren: Wir behandeln $df$ und $dx$ wie Variabeln mit dem Ziel $df$ und $f$
+links, $dx$ und $x$ rechts vom Gleichheitszeichen zu haben:
+\[ \frac{1}{h(f)} df = g(x) dx \]
+
+\paragraph{Schritt 2:} Integrieren: Danach wird auf beiden Seiten integriert:
+\[ \int \frac{1}{h(f)} df = \int g(x) dx \]
+
+\paragraph{Schritt 3:} Auflösen: Danach kann die Gleichung nach $f$ aufgelöst werden.
+
+\subsection{Lineare Differenzialgleichungen mit konstanten Koeffizienten}
+Eine lineare Differenzialgleichung mit konstanten Koeffizienten hat die Form
+\[ a_{0}f(x) + a_{1}f'(x) + a_{2}f''(x) + \dots + a_{n}f^{(n)}(x) = g(x) \]
+oder
+\[ \sum_{k=0}^{n} a_{k}f^{(k)}(x) = s(x) \]
+\begin{itemize}
+  \item $a_k$: Gegebene Konstanten
+  \item $g$: Vorgegebene Funktion (Störfunktion): $g = 0$: homogen; $g \ne 0$: inomogen
+\end{itemize}
+
+\subsubsection{Linearitätsgesetze der homogenen linearen Differenzialgleichung}
+\begin{itemize}
+  \item Sind $f_1$ und $f_2$ Lösungen einer homogenen linearen
+    Differenzialgleichung, ist auch die Summe davon eine Lösung.
+  \item Ist $f$ eine Lösung und $c$ eine Konstante einer homogenen linearen
+    Differenzialgleichung, ist auch das Produkt eine Lösung.
+\end{itemize}
+
+\subsubsection{Homogene lineare Differenzialgleichung 1. Ordnung}
+Die lineare Differenzialgleichung 1. Ordnung
+\[ 2f(x) + 3f'(x) = 0 \]
+kann mit diesem Ansatz gelöst werde, indem man $f(x)$ und $f'(x)$
+ersetzt:
+\[ f(x) = e^{sx} \] und
+\[ f'(x) = s \cdot e^{sx} \]
+Datei ist $s$ eine noch unbekannte Konstante. Das setzt man in die
+Differenzialgleichung ein:
+\[ 2 \cdot e^{sx} + 3 \cdot s \cdot e^{sx} = 0 \]
+Dann wird durch $e^{sx}$ dividiert, damit man die Konstante $s$ erhält:
+\[ 2 + 3 \cdot s = 0 \Leftrightarrow s = - \frac{2}{3} \]
+Somit ist eine Lösung (spezielle Lösung):
+\[f(x) = e^{-\frac{2}{3}x} \]
+Und aufgrund des Linearitätsgesetzes auch jedes konstante Vielfache
+davon (allgemeine Lösung):
+\[f(x) = A \cdot e^{-\frac{2}{3}x} \]
+
+\subsubsection{Homogene lineare Differenzialgleichung 2. Ordnung}
+Eine lineare Differenzialgleichung 2. Ordnung ist nie Separierbar.
+
+\paragraph{Variante 1:} Das gleiche Verfahren kann auch bei homogenen
+linearen Differenzialgleichungen 2. Ordnung angewendet werden:
+\[ f''(x) + f'(x) - 6f(x) = 0 \]
+Ersetzen:
+\[ f(x) = e^{sx} \Rightarrow f'(x) = s \cdot e^{sx}
+  \text{ und } f''(x) = s^2 \cdot e^{sx} \]
+Daraus ergibt sich die Gleichung:
+\[ s^2 \cdot e^{sx} + s \cdot e^{sx} - 6 \cdot e^{sx} = 0 \]
+Nach dem Dividieren durch $e^{sx}$ erhält man
+\[ s = \frac{-1 \pm 5}{2} \]
+Daraus ergeben sich folgende zwei Lösungen:
+\[ f(x) = e^{2x} \text{ und } f(x) = e^{-3x} \]
+Die Allgemeine Lösung lautet deshalb:
+\[ f(x) = A \cdot e^{2x} + B \cdot e^{-3x} \]
+
+Nicht jede homogene lineare Differenzialgleichung 2. Ordnung muss eine
+Lösung in der Form besitzen.
+
+\paragraph{Variante 2:}
+Es gibt einen Lösungsansatz via charakteristisches Polynom.
+\[ f''(x) + f'(x) - 6f(x) = 0 \]
+Daraus kann das charakteristische Polynom gebildet werden (die
+Nullstellen helfen uns die Lösung zu finden):
+\[ 1 \cdot a^2 + 1 \cdot a - 6 = 0 \]
+Wenn man das charakteristische Polynom nach $a$ auflöst, erhält man wie beim vorherigen Beispiel:
+\[ a = \frac{-1 \pm 5}{2} \]
+Durch den Ansatz $f(x) = e^{ax}$, $f'(x) = ae^{ax}$ und $f''(x) =
+a^{2}e^{ax}$ erhält man die allgemeine Lösung:
+\[ f(x) = A \cdot e^{2x} + B \cdot e^{-3x} \]
+
+\subsubsection{Allgemein: Homogene lineare Differenzialgleichung 2. Ordnung}
+Homogene lineare Differenzialgleichung 2. Ordnung:
+\[ c_2f''(x) + c_1f'(x) + c_0f(x) = 0 \]
+In charakteristisches Polynom umwandeln:
+\[ c_2s^2 + c_1s + c_0 = 0 \]
+\paragraph{Fall 1:} Zwei verschiedene Lösungen (Diskriminante ist positiv)
+\[ f(x) = Ae^{s_1x} + Be^{s_2x} \]
+\paragraph{Fall 2:} Nur eine Lösung (Diskriminante ist Null)
+\[ f(x) = (Ax + B) e^{s_1x} \]
+\paragraph{Fall 3:} Keine Lösung (Diskriminante ist negativ)
+\[ f(x) = e^{rx} (A\cos(\omega x) \Leftrightarrow
+  f(x) = Ce^{rx} \cos(\omega x - \phi) \]
+Lösungsformel auf folgende Form bringen:
+\[ s = a \pm \sqrt{b} \]
+Dann ist
+\[ r = a \text{ und } \omega = \sqrt{-b} \]
+\paragraph{Hinweis:} $A$, $B$, $C$ und $\phi$ sind jeweils frei wählbar.
+
+\subsubsection{Inhomogene lineare Differenzialgleichung}
+Die allgemeine Lösung einer inhomogenen linearen Differenzialgleichung
+für
+\[ \sum_{k=0}^{n} a_{k}f^{(k)}(x) = s(x) \]
+ist die Summe einer speziellen Lösung  und  der allgemeinen
+Lösungen der zugehörigen homogenen Gleichung der Form
+\[ \sum_{k=0}^{n} a_{k}f^{(k)}(x) = 0 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Anhang}
 \subsection{Summenformeln}
 \[ \begin{aligned}
   \sum_{i=1}^{n}i     & = \frac{n(n+1)}{2} \\
-  \sum_{i=1}^{n}i^2   & = \frac{n(n+1)(2n+1)}{6} \\
+  \sum_{i=1}^{n}i^4   & = \frac{n(n+1)(2n+1)}{6} \\
   \sum_{i=1}^{n}i^3   & = \left(\frac{n(n+1}{2}\right)^2 \\
 \end{aligned} \]
 \subsection{Additionstheoreme}
