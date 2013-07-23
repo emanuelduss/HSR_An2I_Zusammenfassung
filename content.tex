@@ -2,13 +2,13 @@
 \section{Integralrechnung}
 \subsection{Grundlagen}
 \subsubsection{Bestimmtes Integral}
-Sei $f$ eine auf dem Intervall $[a;b]$ definierte Funktion.
+Sei $f$ eine auf dem Intervall $[a;b]$ definierte Funktion. Wenn der
+Grenzwert
 \[ \int^b_a f = \int^b _a f(x) dx =
-  \lim_{n \to \infty} \frac{b-a}{n} \sum_{k=1}^{n}f(x_k) \cdot \Delta x
+  \lim_{n \to \infty} \sum_{k=1}^{n}f(x_k) \cdot \Delta x
 \]
-mit
-\[ f(x_k) = a + k\left(\frac{b-a}{n}\right) \text{ und }
-  x_k = a + i \cdot \Delta x\]
+mit 
+\[ \Delta x = \frac{b-a}{n} \text{ und } x_k = a + k \cdot \Delta x\]
 existiert, dann heisst die Funktion auf dem Intervall $[a;b]$
 integrierbar.
 
@@ -23,7 +23,7 @@ Beim Integral $\int_{a}^{b}f$ gibt es zwei Fälle:
 
 \subsubsection{Grundregeln für Integrale}
 \begin{itemize}
-  \item Faktorregel: $\int_{a}^{b}c \cdot g = c \cdot \int_{a}^{b}f$
+  \item Faktorregel: $\int_{a}^{b}c \cdot f = c \cdot \int_{a}^{b}f$
   \item Vertauschen der Integralgrenzen ändert das Vorzeichen des Integrals:
     $\int_{a}^{b}f = - \int_{b}^{a}f$
   \item Aneinanderstossende Integrale können zusammengefasst werden:
@@ -36,7 +36,7 @@ Beim Integral $\int_{a}^{b}f$ gibt es zwei Fälle:
 Rechteckregel:
 \[ \int^b_a f =  \Delta x \sum_{k=1}^{n}f(x_k) \]
 mit
-\[ \Delta x = \frac{b-a}{n} \text{ und } x_k = a + i \cdot \Delta x \]
+\[ \Delta x = \frac{b-a}{n} \text{ und } x_k = a + k \cdot \Delta x \]
 
 \subsection{Berechnung von Integralen mit Stammfunktionen}
 \subsubsection{Integralfunktion}
@@ -49,7 +49,7 @@ mit
 \end{itemize}
 
 Aus der Ableitung der Integralfunktion erhalten wir die ursprüngliche Funktion:
-\[ \frac{dx}{x} \phi_a(x) = \frac{dx}{x} \int_a^x f = f(x) \]
+\[ \frac{x}{dx} \phi_a(x) = \frac{dx}{x} \int_a^x f = f(x) \]
 
 \subsubsection{Stammfunktion}
 Wir nennen eine Funktion $F$ Stammfunktion von $f$, wenn die Ableitung
@@ -57,8 +57,8 @@ der Stammfunktion $f$ ergibt:
 \[F \text{ mit } F' = f\]
 
 \subsubsection{Hauptsatz}
-Jede Integralfunktion ist eine Stammfunktion. Diese können wir zum
-Berechnen von Integralen benutzen.
+Jede Integralfunktion ist eine Stammfunktion. Umgekehrt kann jede
+Stammfunktion zum berechnen von Integralen benutzt werden.
 \[\phi_a(b) = \int_a^b f(x)dx = F(x)|^b_{x=a} = F(x)|^b_a = F(b) - F(a) \]
 
 \subsubsection{Unbestimmtes Integral}
@@ -73,7 +73,7 @@ von $f$.
     (f(x) \cdot g(x))|^b_a - \int_a^b f(x) \cdot g'(x) dx$
   \item Spezialfall der Produkteregel: $\int f(x) \cdot f'(x) dx = \frac{1}{2}f^2(x) + c$
   \item Quotientenregel: $\int \frac{f'(x)}{f(x)}dx = ln(|f(x)|) + c$
-  \item Substitutionsregel: $ \int f(g(x)) \cdot f'(x) dx = G(f(x)) + c$
+  \item Substitutionsregel: $ \int f(g(x)) \cdot g'(x) dx = F(g(x)) + c$
 \end{itemize}
 
 
@@ -117,16 +117,22 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 
 \subsection{Eigenschaften}
 \subsubsection{Gerade und ungerade Funktionen}
-\paragraph{Gerade Funktionen}
+\paragraph{Gerade Funktionen (Reine Kosinusreihe)}
 \begin{itemize}
   \item Für die geraden Funktionen ist das Integral
     $\int_0^{\frac{T}{2}}$ am optimalsten.
+  \item Sinus-Kosinus-Form: $s(t) = a_0 + \sum_{k=1}^{n}
+    (a_k \cdot cos(k \omega_1 t))$
+  \item Koeffizient $a_k = \frac{4}{T} \int_0^{\frac{T}{2}} s(t) \cdot cos(k \omega_1 t) dt$
   \item Koeffizient $b_k = 0$
 \end{itemize}
-\paragraph{Ungerade Funktionen}
+\paragraph{Ungerade Funktionen (Reine Sinusreihe)}
 \begin{itemize}
   \item Für die ungeraden Funktionen ist das Integral
-    $\int_{-\frac{T}{2}}^{\frac{T}{2}}$ am optimalsten.
+    $\int_0^{\frac{T}{2}}$ am optimalsten.
+  \item Sinus-Kosinus-Form: $f(t) = a_0 + \sum_{k=1}^{n}
+    (b_k \cdot sin(k \omega_1 t))$
+  \item Koeffizient $b_k = \frac{4}{T} \int_0^{\frac{T}{2}} s(t) \cdot sin(k \omega_1 t) dt$
   \item Koeffizient $a_k = 0$
 \end{itemize}
 
@@ -161,7 +167,7 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \end{itemize}
 \paragraph{Skalierung auf der Y-Achse (Vertikalskalierung)}
 \begin{itemize}
-  \item Transformation: $r(t) = c \cdot s(t)$
+  \item Transformation: $r(t) = c \cdot s(t)$ für $c > 0$
   \item Sinus-Kosinus-Form: $\boldsymbol{(c \cdot a_0)} + \sum_{k=1}^{n}
   ( \boldsymbol{(c \cdot a_k)} \cdot cos(k \omega_1 t) + \boldsymbol{(c
   \cdot b_k)} \cdot sin(k \omega_1 t))$
@@ -173,17 +179,17 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item $r(t) = s(t-c)$ für $c > 0$
   \item Sinus-Kosinus-Form mittels Additionstheoremen berechnen
     \begin{itemize}
-      \item $a_0 + \sum_{k=1}^{n} (a_k \cdot cos(k \omega_1
+      \item[=] $a_0 + \sum_{k=1}^{n} (a_k \cdot cos(k \omega_1
         \boldsymbol{(t-c)}) + b_k \cdot sin(k \omega_1 \boldsymbol{(t-c)}))$
-      \item $a_0 + \sum_{k=1}^{n}(
+      \item[=] $a_0 + \sum_{k=1}^{n}(
         a_k \cdot cos(\boldsymbol{k \omega_1 t - k \omega_1 c}) +
         b_k \cdot sin(\boldsymbol{k \omega_1 t - k \omega_1 c}))$
-      \item  $a_0 + \sum_{k=1}^{n}[
-        a_k (cos(k \omega_1 t) \cdot cos(k \omega_1 c) + sin(k \omega_1
-        t) \cdot sin(k \omega_1 c)) + \\
-        b_k (sin(k \omega_1 t) \cdot cos(k \omega_1 c) + sin(k \omega_1
-        t) \cdot cos(k \omega_1 c))$
-      \item $a_0 + \sum_{k=1}^{n} [
+      \item[=] $a_0 + \sum_{k=1}^{n}[
+        a_k (cos(k \omega_1 t) \cdot cos(k \omega_1 c) +
+        sin(k \omega_1 t) \cdot sin(k \omega_1 c)) + \\
+        b_k (sin(k \omega_1 t) \cdot cos(k \omega_1 c) -
+        sin(k \omega_1 t) \cdot cos(k \omega_1 c))$
+      \item[=] $a_0 + \sum_{k=1}^{n} [
         \boldsymbol{(a_k \cdot cos(k \omega_1 c) -
         b_k \cdot sin(k \omega_1 c))} \cdot cos(k \omega_1 t) + \\
         \boldsymbol{(a_k \cdot sin(k \omega_1 c) +
@@ -198,7 +204,7 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Transformation: $r(t) = s(t) + c$
   \item Sinus-Kosinus-Form: $\boldsymbol{(a_0 + c)} + \sum_{k=1}^{n} ( a_k \cdot
     cos(k \omega_1 t) + b_k \cdot sin(k \omega_1 t))$
-  \item Amplituden-Phasen-Form: $\boldsymbol{A_0} + \sum_{k=1}^{n}
+  \item Amplituden-Phasen-Form: $\boldsymbol{(A_0 + c)} + \sum_{k=1}^{n}
     (A_k \cdot cos(k \omega_1 t  - \phi_k))$
 \end{itemize}
 
@@ -215,8 +221,13 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Allgemeine Lösung: Lösungsmenge mit unendlich verschiedenen
     Lösungen (eine Differenzialgleichung hat in der Regel unendlich viele Lösungen)
   \item Spezielle Lösung: Einzelne Lösung aus der Lösungsmenge
-  \item Randbedingungen: Bedingungen um spezielle Lösung anzugeben.
-  \item Anfangswertproblem: Differenzialgleichung mit Randbedingungen
+  \item Anfangsbedingungen: Bedingungen um spezielle Lösung anzugeben.
+    Vorgabe des Funktionswerts und aller Beleitungen der Funktion bis zum
+    Grad Ordnung - 1 an einer einzigen gemeinsamen Stelle (Z. B. 1.
+    Ordnung: $f(x_0) = 23$). Die Anfangsbedingungen sorgen dafür, dass
+    die DGL nur noch von einer einzigen speziellen Lösung erfüllt
+    werden.
+  \item Anfangswertproblem: Differenzialgleichung mit Anfangsbedingungen
 \end{itemize}
 
 \subsubsection{Explizite Differenzialgleichung}
@@ -285,13 +296,15 @@ links, $dx$ und $x$ rechts vom Gleichheitszeichen zu haben:
 \paragraph{Schritt 2:} Integrieren: Danach wird auf beiden Seiten integriert:
 \[ \int \frac{1}{h(f)} df = \int g(x) dx \]
 
-\paragraph{Schritt 3:} Auflösen: Danach kann die Gleichung nach $f$ aufgelöst werden.
+\paragraph{Schritt 3:} Auflösen: Danach kann die Gleichung nach $f$
+aufgelöst werden. Die Integrationskonstante darf nicht vergessen werden,
+weil man sonst nicht die allgemeine Lösung erhält.
 
 \subsection{Lineare Differenzialgleichungen mit konstanten Koeffizienten}
 Eine lineare Differenzialgleichung mit konstanten Koeffizienten hat die Form
 \[ a_{0}f(x) + a_{1}f'(x) + a_{2}f''(x) + \dots + a_{n}f^{(n)}(x) = g(x) \]
 oder
-\[ \sum_{k=0}^{n} a_{k}f^{(k)}(x) = s(x) \]
+\[ \sum_{k=0}^{n} a_{k}f^{(k)}(x) = g(x) \]
 \begin{itemize}
   \item $a_k$: Gegebene Konstanten
   \item $g$: Vorgegebene Funktion (Störfunktion): $g = 0$: homogen; $g \ne 0$: inomogen
@@ -301,8 +314,9 @@ oder
 \begin{itemize}
   \item Sind $f_1$ und $f_2$ Lösungen einer homogenen linearen
     Differenzialgleichung, ist auch die Summe davon eine Lösung.
-  \item Ist $f$ eine Lösung und $c$ eine Konstante einer homogenen linearen
-    Differenzialgleichung, ist auch das Produkt eine Lösung.
+  \item Ist $f$ eine Lösung einer homogenen linearen
+    Differenzialgleichung und $c$ eine Konstante, ist auch das Produkt
+    eine Lösung.
 \end{itemize}
 
 \subsubsection{Homogene lineare Differenzialgleichung 1. Ordnung}
@@ -366,7 +380,7 @@ In charakteristisches Polynom umwandeln:
 \paragraph{Fall 2:} Nur eine Lösung (Diskriminante ist Null)
 \[ f(x) = (Ax + B) e^{s_1x} \]
 \paragraph{Fall 3:} Keine Lösung (Diskriminante ist negativ)
-\[ f(x) = e^{rx} (A\cos(\omega x) \Leftrightarrow
+\[ f(x) = e^{rx} (A\cos(\omega x) + B (sin(\omega x)) \Leftrightarrow
   f(x) = Ce^{rx} \cos(\omega x - \phi) \]
 Lösungsformel auf folgende Form bringen:
 \[ s = a \pm \sqrt{b} \]
@@ -387,8 +401,8 @@ Lösungen der zugehörigen homogenen Gleichung der Form
 \subsection{Summenformeln}
 \[ \begin{aligned}
   \sum_{i=1}^{n}i     & = \frac{n(n+1)}{2} \\
-  \sum_{i=1}^{n}i^4   & = \frac{n(n+1)(2n+1)}{6} \\
-  \sum_{i=1}^{n}i^3   & = \left(\frac{n(n+1}{2}\right)^2 \\
+  \sum_{i=1}^{n}i^2   & = \frac{n(n+1)(2n+1)}{6} \\
+  \sum_{i=1}^{n}i^3   & = \left(\frac{n(n+1)}{2}\right)^2 \\
 \end{aligned} \]
 \subsection{Additionstheoreme}
 \begin{itemize}
