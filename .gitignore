@@ -6,6 +6,7 @@
 *.blg
 *.dvi
 *.fdb_latexmk
+*.fls
 *.glg
 *.glo
 *.gls
@@ -31,3 +32,6 @@
 *.xdy
 *.tdo
 An2I.pdf
+contributors.tex
+revision.tex
+*.swp
