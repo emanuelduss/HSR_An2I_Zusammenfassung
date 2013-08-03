@@ -87,21 +87,21 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \subsubsection{Sinus-Kosinus-Form}
 \[
   f(t) = a_0 + \sum_{k=1}^{n}
-  (a_k \cdot cos(k \omega_1 t) + b_k \cdot sin(k \omega_1 t))
+  (a_k \cdot \cos(k \omega_1 t) + b_k \cdot \sin(k \omega_1 t))
 \]
 \begin{itemize}
   \item Grundkreisfrequenz (Gemeinsame Periode) $\omega_1 = \frac{2\pi}{T}$
   \item Konstante $a_0 = A_0 = \frac{1}{T}\int_0^T s(t) dt$
-  \item Koeffizient $a_k = A_k \cdot cos(\phi_k) =
-    \frac{2}{T} \int_0^T s(t) \cdot cos(k \omega_1 t) dt$
-  \item Koeffizient $b_k = A_k \cdot sin(\phi_k) =
-    \frac{2}{T} \int_0^T s(t) \cdot sin(k \omega_1 t) dt$
+  \item Koeffizient $a_k = A_k \cdot \cos(\phi_k) =
+    \frac{2}{T} \int_0^T s(t) \cdot \cos(k \omega_1 t) dt$
+  \item Koeffizient $b_k = A_k \cdot \sin(\phi_k) =
+    \frac{2}{T} \int_0^T s(t) \cdot \sin(k \omega_1 t) dt$
 \end{itemize}
 
 \subsubsection{Amplituden-Phasen-Form}
 \[
   f(t) = A_0 + \sum_{k=1}^{n}
-  (A_k \cdot cos(k \omega_1 t  - \phi_k))
+  (A_k \cdot \cos(k \omega_1 t  - \phi_k))
 \]
 \begin{itemize}
   \item Grundkreisfrequenz (Gemeinsame Periode) $\omega_1 = \frac{2\pi}{T}$
@@ -122,8 +122,8 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Für die geraden Funktionen ist das Integral
     $\int_0^{\frac{T}{2}}$ am optimalsten.
   \item Sinus-Kosinus-Form: $s(t) = a_0 + \sum_{k=1}^{n}
-    (a_k \cdot cos(k \omega_1 t))$
-  \item Koeffizient $a_k = \frac{4}{T} \int_0^{\frac{T}{2}} s(t) \cdot cos(k \omega_1 t) dt$
+    (a_k \cdot \cos(k \omega_1 t))$
+  \item Koeffizient $a_k = \frac{4}{T} \int_0^{\frac{T}{2}} s(t) \cdot \cos(k \omega_1 t) dt$
   \item Koeffizient $b_k = 0$
 \end{itemize}
 \paragraph{Ungerade Funktionen (Reine Sinusreihe)}
@@ -131,8 +131,8 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Für die ungeraden Funktionen ist das Integral
     $\int_0^{\frac{T}{2}}$ am optimalsten.
   \item Sinus-Kosinus-Form: $f(t) = a_0 + \sum_{k=1}^{n}
-    (b_k \cdot sin(k \omega_1 t))$
-  \item Koeffizient $b_k = \frac{4}{T} \int_0^{\frac{T}{2}} s(t) \cdot sin(k \omega_1 t) dt$
+    (b_k \cdot \sin(k \omega_1 t))$
+  \item Koeffizient $b_k = \frac{4}{T} \int_0^{\frac{T}{2}} s(t) \cdot \sin(k \omega_1 t) dt$
   \item Koeffizient $a_k = 0$
 \end{itemize}
 
@@ -141,18 +141,18 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
 \begin{itemize}
   \item Transformation: $r(t) = -s(t)$
   \item Sinus-Kosinus-Form: $\boldsymbol{-a_0} + \sum_{k=1}^{n}
-    (\boldsymbol{-a_k} \cdot cos(k \omega_1 t) +
-    \boldsymbol{(-b_k)} \cdot sin(k \omega_1 t))$
+    (\boldsymbol{-a_k} \cdot \cos(k \omega_1 t) +
+    \boldsymbol{(-b_k)} \cdot \sin(k \omega_1 t))$
   \item Amplituden-Phasen-Form: $\boldsymbol{-A_0} + \sum_{k=1}^{n}
-    (A_k \cdot cos(k \omega_1 t  - \boldsymbol{(\phi_k + \pi)}))$
+    (A_k \cdot \cos(k \omega_1 t  - \boldsymbol{(\phi_k + \pi)}))$
 \end{itemize}
 \paragraph{Spiegeln an Y-Achse}
 \begin{itemize}
   \item Transformation: $r(t) = s(-t)$
   \item Sinus-Kosinus-Form: $a_0 + \sum_{k=1}^{n} ( a_k \cdot
-    cos(k \omega_1 t) + \boldsymbol{(-b_k)} \cdot sin(k \omega_1 t))$
+    \cos(k \omega_1 t) + \boldsymbol{(-b_k)} \cdot \sin(k \omega_1 t))$
   \item Amplituden-Phasen-Form: $A_0 + \sum_{k=1}^{n}
-    (A_k \cdot cos(k \omega_1 t  - \boldsymbol{(-\phi_k)}))$
+    (A_k \cdot \cos(k \omega_1 t  - \boldsymbol{(-\phi_k)}))$
 \end{itemize}
 \paragraph{Skalierung auf der X-Achse (Zeitskalierung)}
 \begin{itemize}
@@ -160,52 +160,53 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Für $c < 0$: Zusätzliche Transformation: $r(t) = s(-t)$
   \item Periodendauer $\hat{T} = \frac{1}{c}T$
   \item Sinus-Kosinus-Form: $a_0 + \sum_{k=1}^{n}
-    a_k \cdot cos(k \boldsymbol{(c \omega_1)} t) +
-    b_k \cdot sin(k \boldsymbol{(c \omega_1)} t))$
+    a_k \cdot \cos(k \boldsymbol{(c \omega_1)} t) +
+    b_k \cdot \sin(k \boldsymbol{(c \omega_1)} t))$
   \item Amplituden-Phasen-Form: $A_0 + \sum_{k=1}^{n}
-    (A_k \cdot cos(k \boldsymbol{(c \omega_1)} t  - \phi_k))$
+    (A_k \cdot \cos(k \boldsymbol{(c \omega_1)} t  - \phi_k))$
 \end{itemize}
 \paragraph{Skalierung auf der Y-Achse (Vertikalskalierung)}
 \begin{itemize}
   \item Transformation: $r(t) = c \cdot s(t)$ für $c > 0$
   \item Sinus-Kosinus-Form: $\boldsymbol{(c \cdot a_0)} + \sum_{k=1}^{n}
-  ( \boldsymbol{(c \cdot a_k)} \cdot cos(k \omega_1 t) + \boldsymbol{(c
-  \cdot b_k)} \cdot sin(k \omega_1 t))$
+  ( \boldsymbol{(c \cdot a_k)} \cdot \cos(k \omega_1 t) + \boldsymbol{(c
+  \cdot b_k)} \cdot \sin(k \omega_1 t))$
   \item Amplituden-Phasen-Form: $\boldsymbol{(c \cdot A_0)} + \sum_{k=1}^{n}
-    (\boldsymbol{(c \cdot A_k)} \cdot cos(k \omega_1 t  - \phi_k))$
+    (\boldsymbol{(c \cdot A_k)} \cdot \cos(k \omega_1 t  - \phi_k))$
 \end{itemize}
 \paragraph{Verschieben auf der X-Achse (Zeitverschiebung)}
 \begin{itemize}
   \item $r(t) = s(t-c)$ für $c > 0$
   \item Sinus-Kosinus-Form mittels Additionstheoremen berechnen
     \begin{itemize}
-      \item[=] $a_0 + \sum_{k=1}^{n} (a_k \cdot cos(k \omega_1
-        \boldsymbol{(t-c)}) + b_k \cdot sin(k \omega_1 \boldsymbol{(t-c)}))$
+      \item[=] $a_0 + \sum_{k=1}^{n} (a_k \cdot \cos(k \omega_1
+        \boldsymbol{(t-c)}) + b_k \cdot \sin(k \omega_1 \boldsymbol{(t-c)}))$
       \item[=] $a_0 + \sum_{k=1}^{n}(
-        a_k \cdot cos(\boldsymbol{k \omega_1 t - k \omega_1 c}) +
-        b_k \cdot sin(\boldsymbol{k \omega_1 t - k \omega_1 c}))$
+        a_k \cdot \cos(\boldsymbol{k \omega_1 t - k \omega_1 c}) +
+        b_k \cdot \sin(\boldsymbol{k \omega_1 t - k \omega_1 c}))$
       \item[=] $a_0 + \sum_{k=1}^{n}[
-        a_k (cos(k \omega_1 t) \cdot cos(k \omega_1 c) +
-          sin(k \omega_1 t) \cdot sin(k \omega_1 c)) + \\
-        b_k (sin(k \omega_1 t) \cdot cos(k \omega_1 c) -
-          cos(k \omega_1 t) \cdot sin(k \omega_1 c))$
+        a_k (\cos(k \omega_1 t) \cdot \cos(k \omega_1 c) +
+          \sin(k \omega_1 t) \cdot \sin(k \omega_1 c)) + \\
+        b_k (\sin(k \omega_1 t) \cdot \cos(k \omega_1 c) -
+          \cos(k \omega_1 t) \cdot \sin(k \omega_1 c))$
       \item[=] $a_0 + \sum_{k=1}^{n} [
-        \boldsymbol{(a_k \cdot cos(k \omega_1 c) -
-        b_k \cdot sin(k \omega_1 c))} \cdot cos(k \omega_1 t) + \\
-          \boldsymbol{(a_k \cdot sin(k \omega_1 c) +
-        b_k \cdot cos(k \omega_1 c))} \cdot sin(k \omega_1 t)]$
+        \boldsymbol{(a_k \cdot \cos(k \omega_1 c) -
+        b_k \cdot \sin(k \omega_1 c))} \cdot \cos(k \omega_1 t) + \\
+          \boldsymbol{(a_k \cdot \sin(k \omega_1 c) +
+        b_k \cdot \cos(k \omega_1 c))} \cdot \sin(k \omega_1 t)]$
     \end{itemize}
   \item Amplituden-Phasen-Form: $A_0 + \sum_{k=1}^{n}
-    (A_k \cdot cos(k \omega_1 t - \boldsymbol{(k \omega_1 c + \phi_k)}))$
-  % \item Sinus-Kosinus-Form: $f(t) = a_0 + \sum_{k=1}^{n} (a_k \cdot cos(k \omega_1 t) + b_k \cdot sin(k \omega_1 t))$
+    (A_k \cdot \cos(k \omega_1 t - \boldsymbol{(k \omega_1 c + \phi_k)}))$
+  % \item Sinus-Kosinus-Form: $f(t) = a_0 + \sum_{k=1}^{n} (a_k \cdot
+  % \cos(k \omega_1 t) + b_k \cdot \sin(k \omega_1 t))$
 \end{itemize}
 \paragraph{Verschieben auf der Y-Achse (Vertikalverschiebung)}
 \begin{itemize}
   \item Transformation: $r(t) = s(t) + c$
   \item Sinus-Kosinus-Form: $\boldsymbol{(a_0 + c)} + \sum_{k=1}^{n} ( a_k \cdot
-    cos(k \omega_1 t) + b_k \cdot sin(k \omega_1 t))$
+    \cos(k \omega_1 t) + b_k \cdot \sin(k \omega_1 t))$
   \item Amplituden-Phasen-Form: $\boldsymbol{(A_0 + c)} + \sum_{k=1}^{n}
-    (A_k \cdot cos(k \omega_1 t  - \phi_k))$
+    (A_k \cdot \cos(k \omega_1 t  - \phi_k))$
 \end{itemize}
 
 
@@ -347,7 +348,7 @@ In charakteristisches Polynom umwandeln und nach $s$ auflösen:
 \paragraph{Fall 2:} Nur eine Lösung (Diskriminante ist Null)
 \[ f(x) = (Ax + B) e^{s_1x} \]
 \paragraph{Fall 3:} Keine Lösung (Diskriminante ist negativ)
-\[ f(x) = e^{rx} (A\cos(\omega x) + B (sin(\omega x)) \Leftrightarrow
+\[ f(x) = e^{rx} (A\cos(\omega x) + B (\sin(\omega x)) \Leftrightarrow
   f(x) = Ce^{rx} \cos(\omega x - \phi) \]
 Lösungsformel auf folgende Form bringen:
 \[ s = a \pm \sqrt{b} \]
@@ -373,8 +374,8 @@ Lösungen der zugehörigen homogenen Gleichung der Form
 \end{aligned} \]
 \subsection{Additionstheoreme}
 \begin{itemize}
-  \item $sin(a \pm b) = sin(a) cos(b) \pm cos(a) sin(b)$
-  \item $cos(a \pm b) = cos(a) cos(b) \mp sin(a) sin(b)$
+  \item $\sin(a \pm b) = \sin(a) \cos(b) \pm \cos(a) \sin(b)$
+  \item $\cos(a \pm b) = \cos(a) \cos(b) \mp \sin(a) \sin(b)$
 \end{itemize}
 \subsection{Trignometrische Funktionswerte}
 \begin{itemize}
