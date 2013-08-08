@@ -110,8 +110,10 @@ haben. Je höher die Ordnung $n$, desgo genauer wird die Funktion $f$ aproximier
   \item Konstante $A_0 = a_0$
   \item Koeffizient $A_k = \sqrt{a_k^2 + b_k^2}$
   \item $\phi_k =  \begin{cases}
-      arctan\left(\frac{b_k}{a_k}\right) & \text{ für } a_k > 0 \\
-      arctan\left(\frac{b_k}{a_k}\right) + \pi & \text{ für } a_k < 0 \\
+      arctan\left(\frac{b_k}{a_k}\right) & \text{ für } a_k > 0 
+        \text{ (}= 0 \text{ wenn } b_k = 0 \text{)}\\
+      arctan\left(\frac{b_k}{a_k}\right) + \pi & \text{ für } a_k < 0
+        \text{ (}= \pi \text{ wenn } b_k = 0 \text{)}\\
       \frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k > 0\\
       -\frac{\pi}{2} & \text{ für } a_k = 0 \wedge b_k < 0\\
     \end{cases}$
